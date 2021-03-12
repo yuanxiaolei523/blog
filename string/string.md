@@ -36,7 +36,7 @@ function add (x) {
 
 add`y` // [y]
 function add (x, y, z) {
-    return [x, y, z];
+    return [x, y, z]; // [['', 'Hello  world ', ''], 10+20, 10 * 20]
 }
 console.log(add`${ a + b }Hello  world ${ a * b }`); // [ [ '', 'Hello  world ', '' ], 30, 200 ]
 ```
