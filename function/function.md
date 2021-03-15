@@ -36,4 +36,18 @@ console.log(test());
 ### 注意
 
 1. 函数的参数是默认声明的，不能再函数体内使用let或者const再次声明
+
 2. 使用参数默认值时，函数不能有同名参数
+
+   ```js
+   // 不报错
+   function test2(x, x, y ) {
+       console.log(x); 
+   }
+   // 报错
+   function test3(x, x, y = 10 ) {
+       console.log(x);
+   }
+   ```
+
+3. 参数默认值是惰性求值的
