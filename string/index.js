@@ -38,3 +38,5 @@ let str ='123';
 //padStart(length, str), padEnd()
 console.log('123'.padStart(-2, 'length')); // l123
 console.log('123'.padEnd(4, 'length')); // 123l
+
+console.log('123'.includes(12));

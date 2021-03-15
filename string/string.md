@@ -55,14 +55,17 @@ fromCharCode 不能识别码点大于0xFFFF的字符。
 String.raw()方法的第一个参数是一个对象，它的raw属性等同于原始的模板字符串解析后得到的数组。
 ```js
 // `foo${1 + 2}bar`
- ==> String.raw({raw: [foo, bar]}, 1 + 2)
+ ==> String.raw({raw: ['foo', 'bar']}, 1 + 2)
 ```
 ### codePointAt
 返回某个字符的码点
 
 ### includes
 判断某个字符串是否在另外一个字符串中
-`'123'.includes('12')   // true`
+```js
+'123'.includes('12')   // true
+'123'.includes(12) // true
+```
 ### startsWith，endsWith
 判断参数字符串是否在字符串的开头或者结尾
 `console.log(str.startsWith('s'), str.endsWith('tr')); // true true`
