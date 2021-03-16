@@ -124,9 +124,22 @@ x // 1
 // }
 // console.log(test.name);
 
-let test = function () {
-    console.log(arr);
-}
-console.log(test.name);
+// let test = function () {
+//     console.log(arr);
+// }
+// console.log(test.name);
+// console.log(test.bind(this).name);
 
-console.log(test.bind(this).name);
+//箭头函数
+// let test = (v) => v
+// let test1 = function (v) {
+//     return v;
+// }
+// console.log(test(1)); // 1
+// console.log(test1(2)); // 2
+
+// let test2 = (v1, v2) => {v1: v1, v2: v2} // 报错
+// console.log(test(1));
+
+let test1 = (v1, v2) => ({v1: v1, v2: v2})
+console.log(test1(2,3));

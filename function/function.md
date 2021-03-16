@@ -277,3 +277,48 @@ let test = function () {
 }
 console.log(test.bind(this).name);// bound test
 ```
+## 箭头函数
+ES6中支持箭头函数了
+```js
+let test = v => v
+
+let test1 = function (v) {
+    return v;
+}
+console.log(test(1)); // 1
+console.log(test1(2)); // 2
+```
+上面这两种方式等同
+如果当前箭头函数**不需要参数或者需要多个参数**，则可以使用一个圆括号代表参数部分
+```js
+let test = () => 1
+```
+
+如果箭头函数的函数体超过一条语句，则需要使用大括号将它们括起来，并且使用return语句返回。
+```js
+let test = (v1, v2) => {
+    console.log(v1, v2);
+    return v1 + v2;
+}
+```
+使用箭头函数返回一个对象
+```js
+let test2 = (v1, v2) => {v1: v1, v2: v2}
+```
+这种会直接报错，因为js会将{}当做代码块，所以上述代码会直接报错，所以如果在箭头函数中返回一个对象，需要在外面加一层();
+```js
+let test2 = (v1, v2) => ({v1: v1, v2: v2})// { v1: 2, v2: 3 }
+
+```
+### 优点
+1. 使得函数看起来更加简洁
+2. 简化回调函数
+
+### 注意：
+1. 箭头函数内没有this，或者箭头函数的this是定义时所在的对象，不是使用时所在的对象(不能使用call、apply、bind)
+2. 箭头函数内不能使用arguments
+3. 箭头函数不可以当做构造函数(不能使用new.target)
+4. 箭头函数不能使用yield命令
+### 不适应场合
+1. 定义对象内部的函数时
+2. 动态this
